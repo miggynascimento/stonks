@@ -2,12 +2,12 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 
 type Props = {
-  stockData: StockOpportunitiesType;
+  stockData: AnalyzedStockDataType;
 }
 
 export const Chart = ({ stockData }: Props) => {
   const { opportunities } = stockData;
-  const data = (canvas) => {
+  const data = (canvas: any) => {
     const ctx = canvas.getContext('2d');
     const gradient = ctx.createLinearGradient(0, 0, 100, 0);
     return {
@@ -32,7 +32,7 @@ export const Chart = ({ stockData }: Props) => {
           pointRadius: 1,
           pointHitRadius: 10,
           data: stockData.prices || [],
-          pointBorderColor(context) {
+          pointBorderColor(context: any) {
             const index = context.dataIndex;
             if (opportunities.buyIndices.includes(index)) {
               return 'green';
@@ -56,6 +56,7 @@ export const Chart = ({ stockData }: Props) => {
             display: false,
           },
         }}
+        //@ts-ignore
         tooltip
       />
       <br />

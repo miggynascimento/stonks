@@ -12,7 +12,7 @@ type Props = {
 export const mainListItems = ({ companies, handleOnClick }: Props) => (
   <div>
     {companies.map((company) => (
-      <ListItem button onClick={() => handleOnClick(company)}>
+      <ListItem button onClick={() => handleOnClick({...company})}>
         <ListItemIcon>
           <BarChartIcon />
         </ListItemIcon>

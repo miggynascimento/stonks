@@ -25,7 +25,8 @@ export const CompanyAnalytics = ({ stockData }: Props) => {
   const analyzedStockData = {
     ...stockData,
     opportunities: buyingOpportunities(stockData.prices),
-  } as AnalyzedStockDataType;
+  } as any as AnalyzedStockDataType;
+
   return (
     <Grid container spacing={3}>
       <Grid item xs={12} md={8} lg={12}>

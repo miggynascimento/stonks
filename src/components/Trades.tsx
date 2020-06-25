@@ -7,14 +7,14 @@ import TableRow from '@material-ui/core/TableRow';
 import moment from 'moment';
 import Title from './Title';
 
-function getRange(open, close) {
+function getRange(open: number, close?: number) {
   const openDate = moment().month(open).format('MMMM');
   const closeDate = close ? moment().month(close).format('MMMM') : '(current)';
   return `${openDate} - ${closeDate}`;
 }
 
 type Props = {
-  stockData: AnalyzedStockDataType[];
+  stockData: AnalyzedStockDataType;
 }
 
 export default function Trades({ stockData }: Props) {
@@ -31,7 +31,7 @@ export default function Trades({ stockData }: Props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {stockData.opportunities.buyIndices.map((row, index) => {
+          {stockData.opportunities.buyIndices.map((row: number, index: number) => {
             const closePrice = stockData.prices[stockData.opportunities.exitIndices[index]];
             return (
               <TableRow key={index}>
