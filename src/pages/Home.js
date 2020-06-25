@@ -8,10 +8,10 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import Container from '@material-ui/core/Container';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import { mainListItems} from '../components/listItems';
+import { Typography } from '@material-ui/core';
+import { mainListItems } from '../components/listItems';
 import Header from '../components/Header';
 import { CompanyAnalytics } from '../components/CompanyAnalytics';
-import { Typography } from '@material-ui/core';
 
 const drawerWidth = 240;
 
@@ -82,8 +82,8 @@ const DATA = [
   {
     id: 4,
     name: 'Nikola',
-    prices: [100, 90, 80, 70, 60, 50, 45, 30, 5,4, 3, 0],
-  }
+    prices: [100, 90, 80, 70, 60, 50, 45, 30, 5, 4, 3, 0],
+  },
 ];
 
 export default function Home() {
@@ -96,11 +96,11 @@ export default function Home() {
     setOpen(false);
   };
   const [stockData, setStockData] = React.useState();
-  
+
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <Header 
+      <Header
         open={open}
         handleDrawerOpen={handleDrawerOpen}
       />
@@ -117,16 +117,14 @@ export default function Home() {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems({companies: DATA, handleOnClick: (company) => setStockData(company)})}</List>
+        <List>{mainListItems({ companies: DATA, handleOnClick: (company) => setStockData(company) })}</List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          { stockData ?
-            <CompanyAnalytics stockData={stockData} />
-            :
-            <Typography>Please select a company</Typography>
-          }
+          { stockData
+            ? <CompanyAnalytics stockData={stockData} />
+            : <Typography>Please select a company</Typography>}
         </Container>
       </main>
     </div>

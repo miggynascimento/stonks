@@ -1,12 +1,15 @@
-import React from 'react'
+import React from 'react';
 import { Line } from 'react-chartjs-2';
 
-export const Chart = ({stockData}) =>  {
+type Props = {
+  stockData: StockOpportunitiesType;
+}
 
-  const opportunities = stockData.opportunities
+export const Chart = ({ stockData }: Props) => {
+  const { opportunities } = stockData;
   const data = (canvas) => {
-    const ctx = canvas.getContext("2d")
-    const gradient = ctx.createLinearGradient(0,0,100,0);
+    const ctx = canvas.getContext('2d');
+    const gradient = ctx.createLinearGradient(0, 0, 100, 0);
     return {
       backgroundColor: gradient,
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -29,8 +32,8 @@ export const Chart = ({stockData}) =>  {
           pointRadius: 1,
           pointHitRadius: 10,
           data: stockData.prices || [],
-          pointBorderColor: function(context) {
-            var index = context.dataIndex;
+          pointBorderColor(context) {
+            const index = context.dataIndex;
             if (opportunities.buyIndices.includes(index)) {
               return 'green';
             }
@@ -39,20 +42,26 @@ export const Chart = ({stockData}) =>  {
             }
 
             return 'black';
-        }
+          },
         },
-      ]
-    }
-  }
+      ],
+    };
+  };
   return (
     <>
-        <Line data={data} options={{
-        legend: {
-          display: false
-        },
-      }} tooltip />
+      <Line
+        data={data}
+        options={{
+          legend: {
+            display: false,
+          },
+        }}
+        tooltip
+      />
       <br />
 
     </>
-  )
-}
+  );
+};
+
+export default Chart;
