@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/stonks/static/css/main.5f361e03.chunk.css",
+    "main.js": "/stonks/static/js/main.e6972396.chunk.js",
+    "main.js.map": "/stonks/static/js/main.e6972396.chunk.js.map",
+    "runtime-main.js": "/stonks/static/js/runtime-main.d2f40d1a.js",
+    "runtime-main.js.map": "/stonks/static/js/runtime-main.d2f40d1a.js.map",
+    "static/js/2.4076d15c.chunk.js": "/stonks/static/js/2.4076d15c.chunk.js",
+    "static/js/2.4076d15c.chunk.js.map": "/stonks/static/js/2.4076d15c.chunk.js.map",
+    "index.html": "/stonks/index.html",
+    "precache-manifest.49046146203c5169f964686c9ba18998.js": "/stonks/precache-manifest.49046146203c5169f964686c9ba18998.js",
+    "service-worker.js": "/stonks/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/stonks/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.4076d15c.chunk.js.LICENSE.txt": "/stonks/static/js/2.4076d15c.chunk.js.LICENSE.txt",
+    "static/media/stonks.png": "/stonks/static/media/stonks.471d172e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d2f40d1a.js",
+    "static/js/2.4076d15c.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.e6972396.chunk.js"
+  ]
+}
