@@ -95,9 +95,7 @@ export default function Home() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const [stockData, setStockData] = React.useState();
-
-  console.log({ stockData });
+  const [stockData, setStockData] = React.useState(null);
 
   return (
     <div className={classes.root}>
@@ -119,7 +117,7 @@ export default function Home() {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems({ companies: DATA, handleOnClick: (company) => setStockData({ ...company }) })}</List>
+        <List>{mainListItems({ companies: DATA, handleOnClick: (company) => setStockData({...stockData, ...company}) })}</List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
