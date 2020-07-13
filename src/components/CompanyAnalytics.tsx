@@ -31,6 +31,7 @@ export const CompanyAnalytics = ({ stockData }: Props) => {
     <Grid container spacing={3}>
       <Grid item xs={12} md={8} lg={12}>
         <Paper className={classes.paper}>
+          <h1>{analyzedStockData.name}</h1>
           <Chart stockData={analyzedStockData} />
         </Paper>
       </Grid>
