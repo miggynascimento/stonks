@@ -58,6 +58,7 @@ export const Chart = ({ stockData }: Props) => {
         }}
         //@ts-ignore
         tooltip
+        redraw
       />
       <br />
 
